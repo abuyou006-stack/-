@@ -3,76 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Для самой лучшей девушки</title>
+    <title>Моя вечная юность</title>
     <style>
-        body { margin: 0; padding: 0; font-family: 'Arial', sans-serif; background: #fff5f7; color: #4a4a4a; }
-        .container { max-width: 500px; margin: 0 auto; padding: 20px; text-align: center; }
-        h1 { color: #d63384; font-size: 1.8rem; margin: 20px 0; }
-        
-        /* Кнопка с сердечками */
-        .btn { background: #ff85a2; color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 1.1rem; cursor: pointer; margin: 20px 0; width: 100%; box-shadow: 0 5px 15px rgba(255,133,162,0.4); transition: 0.3s; }
-        .btn:active { transform: scale(0.95); }
+        /* Основные стили */
+        body { margin: 0; padding: 0; font-family: 'Avenir Next', 'Helvetica Neue', Arial, sans-serif; background: linear-gradient(135deg, #fce4ec, #fef2f2, #e3f2fd); color: #4a4a4a; overflow-x: hidden; }
 
-        .photo-card { background: white; padding: 10px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 25px; }
-        .photo-card img { width: 100%; border-radius: 10px; display: block; height: auto; }
-        .caption { margin: 10px 0; font-style: italic; color: #888; font-size: 0.9rem; }
+        /* Контейнер */
+        .wrapper { max-width: 650px; margin: 0 auto; padding: 20px; text-align: center; }
 
-        .letter { background: white; padding: 25px; border-radius: 20px; text-align: left; line-height: 1.6; border-left: 5px solid #ff85a2; margin-top: 30px; }
-        
+        /* Шапка сайта */
+        header { margin: 40px 0; animation: fadeIn 2s ease-out; }
+        header h1 { color: #d63384; font-weight: 300; font-size: 2.5rem; letter-spacing: 2px; margin: 0; }
+        .sub { font-size: 0.9em; color: #888; font-style: italic; margin-top: 5px; }
+
+        /* Сердечки */
         .heart { position: fixed; color: #ff85a2; font-size: 20px; z-index: 999; pointer-events: none; animation: fly 3s linear forwards; }
         @keyframes fly { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } }
+
+        /* Кнопка */
+        .magic-btn { background: white; color: #ff85a2; border: 1px solid #ff85a2; padding: 15px 35px; border-radius: 40px; font-size: 1rem; cursor: pointer; margin: 30px 0; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255,133,162,0.1); }
+        .magic-btn:hover { background: #ff85a2; color: white; transform: translateY(-3px); }
+
+        /* Видео */
+        .video-box { background: white; padding: 10px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; transform: rotate(-1deg); }
+        video { width: 100%; border-radius: 15px; }
+
+        /* Галерея */
+        .gallery-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 50px; }
+
+        .image-card { background: white; padding: 15px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; }
+        .image-card:hover { transform: translateY(-10px) rotate(2deg); box-shadow: 0 15px 35px rgba(255,133,162,0.1); }
+
+        .image-card img { width: 100%; height: auto; border-radius: 10px; transition: transform 0.3s ease; }
+        .image-card:hover img { transform: scale(1.05); }
+
+        .desc { font-size: 0.9rem; color: #666; font-style: italic; margin-top: 15px; }
+
+        /* Декоративные сердечки внутри карточки */
+        .image-card::after { content: '❤️'; position: absolute; bottom: 15px; right: 15px; font-size: 1.5em; opacity: 0; transition: opacity 0.3s ease; }
+        .image-card:hover::after { opacity: 0.7; }
+
+        /* Письмо */
+        .love-letter { background: white; padding: 40px; border-radius: 25px; text-align: left; line-height: 1.8; border-left: 5px solid #ff85a2; margin-top: 60px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); position: relative; }
+        .love-letter h2 { color: #a06b6b; margin-top: 0; font-size: 2rem; font-weight: 300; margin-bottom: 25px; }
+        .love-letter p { line-height: 1.8; margin-bottom: 15px; }
+
+        /* Подвал */
+        footer { margin-top: 70px; margin-bottom: 40px; font-size: 3em; color: #ff8a8a; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @media (max-width: 600px) { header h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
+    <div class="wrapper">
+        <header>
+            <h1>Моя бесконечная юность</h1>
+            <div class="sub">Вся любовь здесь</div>
+        </header>
 
-<div class="container">
-    <h1>Для самой лучшей девушки ❤️</h1>
-    
-    <div class="photo-card">
-        <img src="https://mrtf.sh/api/v1/files/uploaded:IMG_20260325_220710_087.jpg-1c30d0aa-1310-4024-96d4-231bd8ef55d7" alt="Note">
-        <p class="caption">Просто прочти это...</p>
+        <div class="video-box">
+            <video autoplay loop muted playsinline>
+                <source src="VID_20260330_120929_114.mp4" type="video/mp4">
+            </video>
+            <p class="desc">Тихие мгновения только для нас</p>
+        </div>
+
+        <button class="magic-btn" onclick="createHeart()">Если скучаешь, нажми</button>
+
+        <div class="gallery-wrap">
+            <div class="image-card"><img src="IMG-20250715-WA0135.jpg"><p class="desc">Воспоминания, которые греют душу</p></div>
+            <div class="image-card"><img src="IMG_20260330_120928_539.jpg"><p class="desc">Твоя первая улыбка в моей галерее</p></div>
+            <div class="image-card"><img src="IMG_20260330_120918_784.jpg"><p class="desc">Яркие моменты нашей юности</p></div>
+            <div class="image-card"><img src="IMG_20260330_120918_758.jpg"><p class="desc">Твоя улыбка — это всё</p></div>
+            <div class="image-card"><img src="IMG_20260330_120900_796.jpg"><p class="desc">Самые родные глаза</p></div>
+            <div class="image-card"><img src="IMG_20260330_120853_473.jpg"><p class="desc">Тишина и нежность</p></div>
+            <div class="image-card"><img src="IMG_20260330_120817_840.jpg"><p class="desc">Всегда буду рядом</p></div>
+            <div class="image-card"><img src="IMG_20260330_120817_471.jpg"><p class="desc">Наша бесконечная юность</p></div>
+            <div class="image-card"><img src="IMG_20260330_120928_407.jpg"><p class="desc">Моя любовь, моя жизнь</p></div>
+            <div class="image-card"><img src="IMG_20260325_221114_181.jpg"><p class="desc">Взгляд, от которого сердце замирает</p></div>
+            <div class="image-card"><img src="IMG_20260330_120918_587.jpg"><p class="desc">Наша страсть</p></div>
+            <div class="image-card"><img src="IMG_20260330_120918_879.jpg"><p class="desc">Будь всегда со мной</p></div>
+        </div>
+
+        <div class="love-letter">
+            <h2>Прости меня, пожалуйста...</h2>
+            <p>Любимая, я создал это место, чтобы ты увидела, насколько ты мне дорога. Каждая фотография здесь — это часть моей души. Ссора заставила мир потускнеть, но когда я смотрю на нас, я понимаю, насколько мы сильны вместе. Прости меня, если я был неправ.</p>
+            <p>Наша юность, наша страсть, наша общая жизнь. Ты — лучшее, что со мной случалось. Моё сердце принадлежит тебе. Давай забудем всё плохое позади и будем ценить то, что мы есть друг у друга. Я так скучаю.</p>
+            <p><strong>Твой Mikki</strong> ❤️</p>
+        </div>
+
+        <footer>I ❤️ YOU</footer>
     </div>
 
-    <button class="btn" onclick="createHeart()">Нажми сюда, если скучаешь</button>
-
-    <div class="photo-card">
-        <img src="https://mrtf.sh/api/v1/files/uploaded:IMG-20250731-WA0042.jpg-eefb88cf-03df-4d64-b193-85ccfb9210c3" alt="Photo 1">
-        <p class="caption">Твоя улыбка — это всё</p>
-    </div>
-
-    <div class="photo-card">
-        <img src="https://mrtf.sh/api/v1/files/uploaded:IMG_20260329_221926_106.jpg-0f8f5ad3-655f-4328-8320-54ff9f27591b" alt="Photo 2">
-        <p class="caption">Самые родные глаза</p>
-    </div>
-
-    <div class="photo-card">
-        <img src="https://mrtf.sh/api/v1/files/uploaded:IMG_20260329_221925_929.jpg-5688ff21-4fc2-405b-8c3c-386a43481cbf" alt="Photo 3">
-        <p class="caption">Тишина и нежность</p>
-    </div>
-
-    <div class="letter">
-        <h2>Прости меня, пожалуйста...</h2>
-        <p>Я не хочу, чтобы мы были в ссоре. Эта страница — маленькое напоминание о том, как нам хорошо вместе. Ты самая красивая, и я очень ценю каждый наш момент.</p>
-        <p>Давай забудем обиды? Я тебя очень люблю.</p>
-        <p><strong>Твой Mikki</strong></p>
-    </div>
-</div>
-
-<script>
-    function createHeart() {
-        for(let i=0; i<15; i++) {
-            setTimeout(() => {
-                const heart = document.createElement('div');
-                heart.classList.add('heart');
-                heart.innerHTML = '❤️';
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.top = '100vh';
-                heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
-                document.body.appendChild(heart);
-                setTimeout(() => heart.remove(), 3000);
-            }, i * 100);
+    <script>
+        function createHeart() {
+            for(let i=0; i<15; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart');
+                    heart.innerHTML = '❤️';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = '100vh';
+                    heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                    document.body.appendChild(heart);
+                    setTimeout(() => heart.remove(), 3000);
+                }, i * 100);
+            }
         }
-    }
-</script>
+    </script>
 </body>
 </html>
