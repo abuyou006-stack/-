@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для самой лучшей девушки</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Arial', sans-serif; background: #fff5f7; color: #4a4a4a; }
+        .container { max-width: 500px; margin: 0 auto; padding: 20px; text-align: center; }
+        h1 { color: #d63384; font-size: 1.8rem; margin: 20px 0; }
+        
+        /* Кнопка с сердечками */
+        .btn { background: #ff85a2; color: white; border: none; padding: 15px 30px; border-radius: 30px; font-size: 1.1rem; cursor: pointer; margin: 20px 0; width: 100%; box-shadow: 0 5px 15px rgba(255,133,162,0.4); transition: 0.3s; }
+        .btn:active { transform: scale(0.95); }
+
+        .photo-card { background: white; padding: 10px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 25px; }
+        .photo-card img { width: 100%; border-radius: 10px; display: block; height: auto; }
+        .caption { margin: 10px 0; font-style: italic; color: #888; font-size: 0.9rem; }
+
+        .letter { background: white; padding: 25px; border-radius: 20px; text-align: left; line-height: 1.6; border-left: 5px solid #ff85a2; margin-top: 30px; }
+        
+        .heart { position: fixed; color: #ff85a2; font-size: 20px; z-index: 999; pointer-events: none; animation: fly 3s linear forwards; }
+        @keyframes fly { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Для самой лучшей девушки ❤️</h1>
+    
+    <div class="photo-card">
+        <img src="https://mrtf.sh/api/v1/files/uploaded:IMG_20260325_220710_087.jpg-1c30d0aa-1310-4024-96d4-231bd8ef55d7" alt="Note">
+        <p class="caption">Просто прочти это...</p>
+    </div>
+
+    <button class="btn" onclick="createHeart()">Нажми сюда, если скучаешь</button>
+
+    <div class="photo-card">
+        <img src="https://mrtf.sh/api/v1/files/uploaded:IMG-20250731-WA0042.jpg-eefb88cf-03df-4d64-b193-85ccfb9210c3" alt="Photo 1">
+        <p class="caption">Твоя улыбка — это всё</p>
+    </div>
+
+    <div class="photo-card">
+        <img src="https://mrtf.sh/api/v1/files/uploaded:IMG_20260329_221926_106.jpg-0f8f5ad3-655f-4328-8320-54ff9f27591b" alt="Photo 2">
+        <p class="caption">Самые родные глаза</p>
+    </div>
+
+    <div class="photo-card">
+        <img src="https://mrtf.sh/api/v1/files/uploaded:IMG_20260329_221925_929.jpg-5688ff21-4fc2-405b-8c3c-386a43481cbf" alt="Photo 3">
+        <p class="caption">Тишина и нежность</p>
+    </div>
+
+    <div class="letter">
+        <h2>Прости меня, пожалуйста...</h2>
+        <p>Я не хочу, чтобы мы были в ссоре. Эта страница — маленькое напоминание о том, как нам хорошо вместе. Ты самая красивая, и я очень ценю каждый наш момент.</p>
+        <p>Давай забудем обиды? Я тебя очень люблю.</p>
+        <p><strong>Твой Mikki</strong></p>
+    </div>
+</div>
+
+<script>
+    function createHeart() {
+        for(let i=0; i<15; i++) {
+            setTimeout(() => {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = '100vh';
+                heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 3000);
+            }, i * 100);
+        }
+    }
+</script>
+</body>
+</html>
